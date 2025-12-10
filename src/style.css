@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #fafafa;
+  color: #222;
+}
+
+.page-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+
+
+
+
+--navbar
+
+
+.navbar {
+  background: #ffffff;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 34px;
+}
+
+.brand-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+
+
+
+
+
+--navlinks desktop
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.navbar-links a:hover {
+  color: #000;
+}
+
+
+
+
+
+--mobilemenu slideout
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  height: 100%;
+  width: 240px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 200;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.side-menu a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #222;
+  font-weight: 500;
+}
+
+.close-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 150;
+}
+
+
+
+
+
+
+--Product grid 
+
+.grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+
+
+
+
+
+--product card  
+
+.product-card {
+  background: #fff;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #eee;
+  transition: 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.product-image-wrapper {
+  background: #f1f1f1;
+  border-radius: 10px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image-wrapper img {
+  max-height: 140px;
+}
+
+
+
+
+
+
+--filterbar
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.filter-input, .filter-select {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+
+
+
+
+
+
+--Auth-pages
+
+.auth-page {
+  max-width: 380px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.auth-input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.auth-btn {
+  width: 100%;
+}
+
+
+
+
+--buttons 
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: #111;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #000;
+}
+
+.btn-outline {
+  border: 1px solid #222;
+  background: #fff;
+  color: #222;
+}
+
+.btn-outline:hover {
+  background: #222;
+  color: #fff;
+}
+
+
+
+
+
+
