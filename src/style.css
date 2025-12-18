@@ -2,11 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
   font-family: "Inter", sans-serif;
-  background: #fafafa;
+  background: #f1f1f1f1;
   color: #222;
 }
 
@@ -18,47 +19,318 @@ body {
 
 
 
+/* home  */
 
-
-
---navbar
-
-
-.navbar {
-  background: #ffffff;
-  padding: 14px 20px;
+/* HOME PAGE */
+ 
+ 
+ /* make banner section a positioned container */
+ .bnlogo{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
+  position: absolute;
+  width: 300px;
+  top: 40px;
+  left: 80px;
   z-index: 100;
 }
 
-.brand {
+.bnlogo img {
+  width: 100%;
+  height: auto;
+}
+
+.mybannersect,
+.bannersect { 
+  position: relative;
+}
+
+.bannersect {
+  height: 90vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+  margin: 3px 3px;
+  border: 1px solid #ffffff;
+  border-radius: 1px;
+ background-color: #f1f1f1;
+  background-attachment: fixed;
+}
+
+.bnimg{
+  width: auto;
+  height: auto;
+  mix-blend-mode: normal;
+  border-radius: 12px;
+  display: block;
+  opacity: 0;
+  transform: translateY(12px) scale(0.99);
+  transform-origin: center bottom;
+  animation: bn-fade-in 3s ease-out forwards;
+ 
+  max-width: 90%;
+  transition: .5s;
+}
+
+@keyframes bn-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+ .bn-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  
+  font-size: clamp(28px, 5.5vw, 64px); /* responsive, long and elegant */
+  color: #000000;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  margin: 0 20px 12px 20px;
+  text-shadow: 0 8px 30px rgba(134, 137, 212, 0.5);
+  text-transform: uppercase;
+  max-width: 700px;
+}
+
+.bn-writeup {
+  position: absolute;
+  bottom: 30%;
+  left: 77%;
+  text-align: left;
+  color: #fff;
+  z-index: 10;
+}
+
+.writeup-btn {
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  cursor: pointer;
+  background-color: #000000;
+  color: #ffffff;
+  transform: none;
+  margin-left: 5%;
+  padding: 12px 24px;
+  font-size: 18px;
+  transition: .2s ease-in-out;
+}
+.writeup-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+/* overlay navbar only when .navbar--overlay is present */
+.navbar--overlay {
+  position: absolute;        /* or absolute if you prefer it not to stick on scroll */
+  top: 20px;             /* distance from top */
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: transparent;
+  border-bottom: none;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end; /* keep your existing layout or adjust */
+  padding: 0 20px;            /* adjust spacing */
+}
+.navbar--overlay2 {
+  position: fixed;        /* or absolute if you prefer it not to stick on scroll */
+  top: 20px;             /* distance from top */
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: none;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end; /* keep your existing layout or adjust */
+  padding: 0 20px;            /* adjust spacing */
+}
+
+/* make overlay links visible on top of image */
+.navbar--overlay a {
+  color: #fff; /* white text on image */
+  text-shadow: 0 4px 14px rgba(0,0,0,0.6);
+  padding: 12px 10px;
+}
+
+/* if you want the navbar to not cover top content when fixed, add page padding (optional) */
+body.has-fixed-navbar {
+  padding-top: 72px; /* adjust to navbar height so content below isn't hidden */
+}
+
+/* small-screen tweaks */
+@media (max-width: 900px) {
+  .navbar--overlay { top: 10px; padding: 0 12px; }
+  .navbar--overlay a { padding: 8px; font-size: 14px; }
+}
+
+ 
+
+
+
+
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  background: transparent;
+  mix-blend-mode: lighten;
+  min-width: 160px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 1000;
+  animation: fadeSlide 0.2s ease;
+}
+
+.profile-dropdown a {
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+}
+
+.profile-dropdown a:hover {
+  background: #f5f5f5;
+}
+
+
+.Wears-wrapper {
+  position: relative;
+}
+
+.Wears-dropdown {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  background: blend;
+  min-width: 160px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 1000;
+  animation: fadeSlide 0.2s ease;
+}
+
+.Wears-dropdown a {
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+}
+
+.Wears-dropdown a:hover {
+  background: #f5f5f5;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding:10px 20px;
+  font-size: 18px;
+  box-sizing: border-box;
+  align-items: right;
+  margin-left: 70%;
+  max-width: 100vw;
+  width: 100%;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  font-weight: 500;
+}
+
+.navicon1{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.navicon2{
   display: flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
 }
 
-.brand-logo {
-  height: 34px;
+/* Underline animation */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0%;
+  height: 4px;
+  background: black;
+  transition: 0.3s ease;
 }
 
-.brand-text {
-  font-size: 20px;
-  font-weight: 700;
-  color: #111;
+.navbar a:hover::after {
+  width: 70%;
+}
+
+/* HERO */
+ 
+/* FEATURE CARDS */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 80px 0;
+}
+
+.feature-card {
+  width: 250px;
+  height: 150px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 5px 25px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 30px rgba(0,0,0,0.15);
 }
 
 
 
-
-
-
---navlinks desktop
+/* 
+--navlinks desktop */
 
 .navbar-links {
   display: flex;
@@ -80,7 +352,7 @@ body {
 
 
 
---mobilemenu slideout
+/* --mobilemenu slideout */
 
 .menu-btn {
   background: none;
@@ -105,38 +377,14 @@ body {
   z-index: 200;
 }
 
-.side-menu.open {
-  right: 0;
-}
-
-.side-menu a {
-  text-decoration: none;
-  font-size: 18px;
-  color: #222;
-  font-weight: 500;
-}
-
-.close-btn {
-  align-self: flex-end;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  z-index: 150;
-}
+ 
 
 
 
 
 
 
---Product grid 
+/* --Product grid  */
 
 .grid {
   display: grid;
@@ -145,11 +393,7 @@ body {
 }
 
 
-
-
-
-
---product card  
+/* --product card   */
 
 .product-card {
   background: #fff;
@@ -180,29 +424,7 @@ body {
 
 
 
-
-
---filterbar
-
-.filter-bar {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-.filter-input, .filter-select {
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-}
-
-
-
-
-
-
-
---Auth-pages
+/* --Auth-pages */
 
 .auth-page {
   max-width: 380px;
@@ -228,7 +450,7 @@ body {
 
 
 
---buttons 
+/*buttons */
 
 .btn {
   padding: 10px 16px;
@@ -263,3 +485,67 @@ body {
 
 
 
+/* ========================== */
+/*   RESPONSIVE BEHAVIOR      */
+/* ========================== */
+
+/* Mobile-only class */
+.mobile-only {
+  display: none;
+}
+
+/* Desktop-only class */
+.desktop-only {
+  display: flex;
+}
+
+/* Large screens */
+@media (min-width: 900px) {
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero-text {
+    max-width: 45%;
+  }
+
+  .hero-image img {
+    width: 420px;
+  }
+}
+
+/* Tablets & Smaller Screens */
+@media (max-width: 900px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-image-wrapper {
+    height: 140px;
+  }
+}

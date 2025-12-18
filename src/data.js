@@ -5,7 +5,7 @@ export const products = [
     price: 300,
     category: "phones",
     type: "single",
-    image: "/images/iphone12.png",
+    image: "/images/cloth1.png",
     badge: "X-MAS DEAL",
     description:
       "Flagship performance with pro camera system and stunning display."
@@ -16,7 +16,7 @@ export const products = [
     price: 160,
     category: "accessories",
     type: "single",
-    image: "/images/luxury-watch.png",
+    image: "/images/shirt1.png",
     badge: "50% OFF",
     description:
       "A premium timepiece built with sapphire crystal and stainless steel."
@@ -27,7 +27,7 @@ export const products = [
     price: 90,
     type: "outfit",
     category: "outfits",
-    image: "/images/outfit1.png",
+    image: "/images/shirt3.png",
     description:
       "H&M style curated outfit — hoodie, joggers, and sneakers included."
   },
@@ -37,7 +37,7 @@ export const products = [
     price: 210,
     category: "accessories",
     type: "single",
-    image: "/images/jewellery.png",
+    image: "/images/shirt2.png",
     description:
       "Customizable layered jewelry set with gold-toned accents."
   }
